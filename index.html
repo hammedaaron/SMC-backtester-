@@ -2,27 +2,17 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <!-- Optimized for mobile/PWA -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>SMC Backtester | Dragon HAMS☆R</title>
   
-  <!-- PWA Manifest -->
+  <!-- PWA Meta Tags -->
   <link rel="manifest" href="/site.webmanifest">
-  
-  <!-- Theme color (Status bars) - Updated to match project brand #0B0B0B -->
   <meta name="theme-color" content="#0B0B0B">
-  
-  <!-- iOS Specific -->
-  <link rel="apple-touch-icon" href="/android-chrome-192x192.png">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="SMC Backtester">
+  <link rel="apple-touch-icon" href="/android-chrome-192x192.png">
 
-  <!-- Favicons -->
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-
-  <!-- Tailwind & Project Styling -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -38,29 +28,79 @@
               textSecondary: '#B0B0B0',
               blue: '#24A1DE',
             }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          animation: {
+            'fire-flicker': 'fire 2s infinite alternate',
+            'float': 'float 6s ease-in-out infinite',
+            'dragon-fade': 'fade 8s ease-in-out infinite',
+          },
+          keyframes: {
+            fire: {
+              '0%': { transform: 'scale(1)', filter: 'drop-shadow(0 0 5px #F7A707)' },
+              '100%': { transform: 'scale(1.1)', filter: 'drop-shadow(0 0 20px #F7A707)' },
+            },
+            float: {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-20px)' },
+            },
+            fade: {
+              '0%, 100%': { opacity: 0.05 },
+              '50%': { opacity: 0.15 },
+            }
           }
         }
       }
     }
   </script>
-  
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@1,900&display=swap');
+    
     body {
       background-color: #0B0B0B;
       color: #FFFFFF;
-      margin: 0;
-      overflow: hidden; /* Prevents browser bounce on mobile */
+      overflow: hidden;
       touch-action: manipulation;
     }
-    #root { height: 100vh; }
-  </style>
 
+    .scrollbar-hide::-webkit-scrollbar { display: none; }
+    .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+
+    .view-transition {
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .bybit-card {
+      background: #121212;
+      border: 1px solid #1E1E1E;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+
+    .active-scale:active {
+      transform: scale(0.97);
+    }
+
+    .luxury-text {
+      font-family: 'Playfair Display', serif;
+    }
+
+    .fire-gradient {
+      background: linear-gradient(0deg, #F7A707 0%, transparent 100%);
+    }
+  </style>
+<script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "react/": "https://esm.sh/react@^19.2.3/"
+  }
+}
+</script>
 </head>
 <body>
-  <!-- REQUIRED: React Mount Point -->
   <div id="root"></div>
-
-  <!-- REQUIRED: Entry Point for Vite/React -->
-  <script type="module" src="/index.tsx"></script>
 </body>
 </html>

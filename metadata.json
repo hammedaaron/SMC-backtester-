@@ -1,0 +1,7 @@
+{
+  "name": "SMC Backtester",
+  "description": "A mobile-first, drag-and-drop backtesting and journaling app for crypto traders using Smart Money Concepts (SMC). Track KPIs, manage sessions, and maintain trading discipline with daily threshold logic.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
