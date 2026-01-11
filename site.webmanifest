@@ -1,0 +1,23 @@
+{
+  "name": "SMC Backtester",
+  "short_name": "SMC Log",
+  "description": "Professional Smart Money Concepts (SMC) backtesting and journaling tool.",
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#0B0B0B",
+  "background_color": "#0B0B0B",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "scope": "/"
+}

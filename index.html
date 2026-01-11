@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- Optimized for mobile/PWA -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>SMC Backtester | Dragon HAMS☆R</title>
+  
+  <!-- PWA Manifest -->
+  <link rel="manifest" href="/site.webmanifest">
+  
+  <!-- Theme color (Status bars) - Updated to match project brand #0B0B0B -->
+  <meta name="theme-color" content="#0B0B0B">
+  
+  <!-- iOS Specific -->
+  <link rel="apple-touch-icon" href="/android-chrome-192x192.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="SMC Backtester">
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+
+  <!-- Tailwind & Project Styling -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              orange: '#F7A707',
+              dark: '#0B0B0B',
+              surface: '#121212',
+              border: '#1E1E1E',
+              textPrimary: '#FFFFFF',
+              textSecondary: '#B0B0B0',
+              blue: '#24A1DE',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  
+  <style>
+    body {
+      background-color: #0B0B0B;
+      color: #FFFFFF;
+      margin: 0;
+      overflow: hidden; /* Prevents browser bounce on mobile */
+      touch-action: manipulation;
+    }
+    #root { height: 100vh; }
+  </style>
+
+</head>
+<body>
+  <!-- REQUIRED: React Mount Point -->
+  <div id="root"></div>
+
+  <!-- REQUIRED: Entry Point for Vite/React -->
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
